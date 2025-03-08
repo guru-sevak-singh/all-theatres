@@ -68815,21 +68815,21 @@ function showTheatre() {
         `
         tbody.appendChild(tr);
     }
-    document.getElementById('real-value').innerText = `${sorted_theatres.length - 1}/${all_theatre.length - 1}`
+    document.getElementById('real-value').innerText = `${sorted_theatres.length}/${all_theatre.length}`
 }
 
 // function to filter based on a condition
 const filter_theatre = (criteriaType, value) => {
     return sorted_theatres.filter(theatre => {
         const [
-        TheatreName,
-        ChainName,
-        State,
-        Pin,
-        City,
-        CompleteAddress
+            TheatreName,
+            ChainName,
+            State,
+            Pin,
+            City,
+            CompleteAddress
         ] = theatre;
-        
+
         if (criteriaType == "Theatre Name") {
             return TheatreName.toLowerCase().includes(value.toLowerCase());
         } else if (criteriaType == 'Chain Name') {
@@ -68844,7 +68844,7 @@ const filter_theatre = (criteriaType, value) => {
             return CompleteAddress.toLowerCase().includes(value.toLowerCase());
         }
         return false
-        
+
     });
 };
 
@@ -68865,14 +68865,33 @@ const addressFilter = document.getElementById('addressFilter');
 const cityFilter = document.getElementById('cityFilter');
 
 
-function addAllFilter(theatre, chian, state, pin,city, address) {
+function addAllFilter(theatre, chian, state, pin, city, address) {
 
     theatreNameFilter.value = theatre;
-    chainNameFilter.value = theatre;
+    chainNameFilter.value = chian;
     stateFilter.value = state;
     pinFilter.value = pin;
     cityFilter.value = city;
     addressFilter.value = address;
+
+    if (theatre == null) {
+        theatre = "";
+    }
+    if (chian == null) {
+        chian = "";
+    }
+    if (state == null) {
+        state = "";
+    }
+    if (pin == null) {
+        pin = "";
+    }
+    if (city == null) {
+        city = "";
+    }
+    if (address == null) {
+        address = "";
+    }
 
     sorted_theatres = filter_theatre('Theatre Name', theatre)
     console.log('theatre', sorted_theatres.length)
@@ -68886,39 +68905,3 @@ function addAllFilter(theatre, chian, state, pin,city, address) {
 addAllFilter(theatreName, chianValue, stateValue, pinValue, cityValue, addressValue)
 
 showTheatre();
-
-const filterButton = document.getElementById('filterButton');
-const resetButton = document.getElementById('resetButton');
-
-// filterButton.addEventListener('click', ()=> {
-//     console.log('i get clicked...');
-//     console.log(theatreNameFilter.value);
-//     console.log(sorted_theatres.length);
-//     sorted_theatres = filter_theatre('Theatre Name', theatreNameFilter.value);
-//     console.log(chainNameFilter.value);
-//     console.log(sorted_theatres.length);
-//     sorted_theatre = filter_theatre('Chain Name', chainNameFilter.value);
-//     console.log('updating state name', stateFilter.value);
-//     console.log(sorted_theatres.length);
-//     sorted_theatre = filter_theatre('State', stateFilter.value);
-//     console.log('updating pin name', pinFilter.value);
-//     console.log(sorted_theatres.length);
-//     sorted_theatre = filter_theatre('Pin', pinFilter.value);
-//     console.log(sorted_theatres.length);
-//     console.log('updating complete address', addressFilter.value);
-//     console.log(sorted_theatres.length);
-//     sorted_theatre = filter_theatre('Complete Address', addressFilter.value);
-//     // show the sorted theatre
-//     showTheatre();
-// });
-
-// resetButton.addEventListener('click', ()=>{
-//     theatreNameFilter.value = "";
-//     chainNameFilter.value = "";
-//     stateFilter.value = "";
-//     pinFilter.value = "";
-//     addressFilter.value = "";
-    
-//     sorted_theatres = all_theatre;
-//     showTheatre();
-// });
