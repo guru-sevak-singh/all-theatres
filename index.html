@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theatre Data</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="filter-container">
+    <form action="" method="get">
+    <label for="theatreNameFilter">Theatre Name: </label>
+    <input type="text" name="theatreValue" id="theatreNameFilter" placeholder="Search by Theatre Name">
+    <label for="chainNameFilter">Chain Name: </label>
+    <input type="text" name="chainValue" id="chainNameFilter" placeholder="Search by Chain Name">
+    <label for="stateFilter">State: </label>
+    <input type="text" name="stateName" id="stateFilter" placeholder="Search by State">
+    <label for="pinFilter">Pin: </label>
+    <input type="text" name="pinValue" id="pinFilter" placeholder="Search by Pin">
+    <label for="city">City Name: </label>
+    <input type="text" name="cityValue" id="cityFilter" placeholder="Search by City">
+    <label for="addressFilter">Address: </label>
+    <input type="text" name="addressValue" id="addressFilter" placeholder="Search by Address">
+    <button type="submit" id='filterButton'>Filter</button>
+    <button id='resetButton' type='reset'>Reset</button>
+  </div>
+
+  <p id="real-value"></p>
+  <table id="theatreTable">
+    <thead>
+      <tr>
+        <th>Theatre Name</th>
+        <th>Chain Name</th>
+        <th>State</th>
+        <th>Pin</th>
+        <th>City</th>
+        <th>Complete Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data rows will go here -->
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.filter-container {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.filter-container label {
+  margin-right: 10px;
+}
+
+#theatreTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#theatreTable th, #theatreTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#theatreTable th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+Button {
+ margin: 1%;
+}
