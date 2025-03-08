@@ -68806,12 +68806,12 @@ function showTheatre() {
     for (let i = 0; i < sorted_theatres.length; i++) {
         let tr = document.createElement('tr')
         tr.innerHTML = `
-            <td>${sorted_theatres[i][0]}</td>
-            <td>${sorted_theatres[i][1]}</td>
-            <td>${sorted_theatres[i][2]}</td>
-            <td>${sorted_theatres[i][3]}</td>
-            <td>${sorted_theatres[i][4]}</td>
-            <td>${sorted_theatres[i][5]}</td>
+            <td onclick="updateFilter(this)" class="theatreNameFilter">${sorted_theatres[i][0]}</td>
+            <td onclick="updateFilter(this)" class="chainNameFilter">${sorted_theatres[i][1]}</td>
+            <td onclick="updateFilter(this)" class="stateFilter">${sorted_theatres[i][2]}</td>
+            <td onclick="updateFilter(this)" class="pinFilter">${sorted_theatres[i][3]}</td>
+            <td onclick="updateFilter(this)" class="cityFilter">${sorted_theatres[i][4]}</td>
+            <td onclick="updateFilter(this)" class="addressFilter">${sorted_theatres[i][5]}</td>
         `
         tbody.appendChild(tr);
     }
@@ -68905,3 +68905,8 @@ function addAllFilter(theatre, chian, state, pin, city, address) {
 addAllFilter(theatreName, chianValue, stateValue, pinValue, cityValue, addressValue)
 
 showTheatre();
+
+function updateFilter(td) {
+    id = td.getAttribute('class')
+    document.getElementById(id).value = td.innerText;    
+}
