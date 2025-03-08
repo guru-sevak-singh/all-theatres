@@ -35,3 +35,7 @@ body {
 Button {
  margin: 1%;
 }
+
+input {
+  margin: 0.5% 1%;
+}
